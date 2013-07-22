@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "SearchResult.h"
+#import "SearchResultCell.h"
 
 @interface SearchViewController ()
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
@@ -49,15 +50,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell"];
+    SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchResultCell"];
     
     if ([searchResults count] == 0) {
-        cell.textLabel.text = @"(Nothing found)";
-        cell.detailTextLabel.text = @"";
+        cell.nameLabel.text = @"(Nothing found)";
+        cell.artistNameLabel.text = @"";
     } else {
         SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
-        cell.textLabel.text = searchResult.name;
-        cell.detailTextLabel.text = searchResult.artistName;
+        cell.nameLabel.text = searchResult.name;
+        cell.artistNameLabel.text = searchResult.artistName;
     }
     
     return cell;
