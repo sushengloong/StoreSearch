@@ -36,6 +36,8 @@
 {
     if (searchResults == nil) {
         return 0;
+    } else if ([searchResults count] == 0) {
+        return 1;
     } else {
         return [searchResults count];
     }
@@ -50,12 +52,33 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
-    cell.textLabel.text = searchResult.name;
-    cell.detailTextLabel.text = searchResult.artistName;
+    if ([searchResults count] == 0) {
+        cell.textLabel.text = @"(Nothing found)";
+        cell.detailTextLabel.text = @"";
+    } else {
+        SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
+        cell.textLabel.text = searchResult.name;
+        cell.detailTextLabel.text = searchResult.artistName;
+    }
     
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([searchResults count] == 0) {
+        return nil;
+    } else {
+        return indexPath;
+    }
+}   
 
 #pragma mark - UISearchBarDelegate
 
@@ -65,11 +88,13 @@
     
     searchResults = [NSMutableArray arrayWithCapacity:10];
     
-    for (int i = 0; i < 3; i++) {
-        SearchResult *searchResult = [[SearchResult alloc] init];
-        searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
-        searchResult.artistName = searchBar.text;
-        [searchResults addObject:searchResult];
+    if (![searchBar.text isEqualToString:@"justin bieber"]) {
+        for (int i = 0; i < 3; i++) {
+            SearchResult *searchResult = [[SearchResult alloc] init];
+            searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
+            searchResult.artistName = searchBar.text;
+            [searchResults addObject:searchResult];
+        }
     }
     
     [self.tableView reloadData];
