@@ -18,6 +18,7 @@
 		2CA1A8B3179D5CBD0073C7A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B2179D5CBD0073C7A9 /* Default-568h@2x.png */; };
 		2CA1A8B6179D5CBD0073C7A9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */; };
 		2CA1A8B9179D5CBE0073C7A9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B7179D5CBE0073C7A9 /* SearchViewController.xib */; };
+		2CA1A8C1179D67080073C7A9 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A8C0179D67080073C7A9 /* SearchResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		2CA1A8B4179D5CBD0073C7A9 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2CA1A8B8179D5CBE0073C7A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SearchViewController.xib; sourceTree = "<group>"; };
+		2CA1A8BF179D67080073C7A9 /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
+		2CA1A8C0179D67080073C7A9 /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		2CA1A8A2179D5CBD0073C7A9 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				2CA1A8BF179D67080073C7A9 /* SearchResult.h */,
+				2CA1A8C0179D67080073C7A9 /* SearchResult.m */,
 				2CA1A8AB179D5CBD0073C7A9 /* AppDelegate.h */,
 				2CA1A8AC179D5CBD0073C7A9 /* AppDelegate.m */,
 				2CA1A8B4179D5CBD0073C7A9 /* SearchViewController.h */,
@@ -176,6 +181,7 @@
 				2CA1A8A9179D5CBD0073C7A9 /* main.m in Sources */,
 				2CA1A8AD179D5CBD0073C7A9 /* AppDelegate.m in Sources */,
 				2CA1A8B6179D5CBD0073C7A9 /* SearchViewController.m in Sources */,
+				2CA1A8C1179D67080073C7A9 /* SearchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				2CA1A8BE179D5CBE0073C7A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
