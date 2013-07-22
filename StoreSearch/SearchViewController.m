@@ -10,6 +10,8 @@
 #import "SearchResult.h"
 #import "SearchResultCell.h"
 
+static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
+
 @interface SearchViewController ()
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -23,8 +25,8 @@
 {
     [super viewDidLoad];
 
-    UINib *cellNib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
-    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"SearchResultCell"];
+    UINib *cellNib = [UINib nibWithNibName:SearchResultCellIdentifier bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
 
     self.tableView.rowHeight = 80;
 }
@@ -50,7 +52,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:@"SearchResultCell"];
+    SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
     
     if ([searchResults count] == 0) {
         cell.nameLabel.text = @"(Nothing found)";
