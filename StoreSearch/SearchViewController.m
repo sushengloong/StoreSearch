@@ -21,7 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    UINib *cellNib = [UINib nibWithNibName:@"SearchResultCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"SearchResultCell"];
+
+    self.tableView.rowHeight = 80;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,12 +49,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SearchResultCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchResultCell"];
     
     if ([searchResults count] == 0) {
         cell.textLabel.text = @"(Nothing found)";
