@@ -11,6 +11,7 @@
 #import "SearchResultCell.h"
 
 static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
+static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 @interface SearchViewController ()
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
@@ -29,6 +30,9 @@ static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
 
     self.tableView.rowHeight = 80;
+    
+    cellNib = [UINib nibWithNibName:NothingFoundCellIdentifier bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:NothingFoundCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,18 +56,17 @@ static NSString *const SearchResultCellIdentifier = @"SearchResultCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
-    
     if ([searchResults count] == 0) {
-        cell.nameLabel.text = @"(Nothing found)";
-        cell.artistNameLabel.text = @"";
+        return [tableView dequeueReusableCellWithIdentifier:NothingFoundCellIdentifier];
     } else {
+        SearchResultCell *cell = (SearchResultCell *)[tableView dequeueReusableCellWithIdentifier:SearchResultCellIdentifier];
+        
         SearchResult *searchResult = [searchResults objectAtIndex:indexPath.row];
         cell.nameLabel.text = searchResult.name;
         cell.artistNameLabel.text = searchResult.artistName;
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 #pragma mark - UITableViewDelegate

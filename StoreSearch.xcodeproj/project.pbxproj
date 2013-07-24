@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C72523D17A0186700C2EE32 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */; };
 		2C8360C6179D84CC00AE1178 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8360C5179D84CC00AE1178 /* SearchResultCell.m */; };
 		2CA1A89D179D5CBD0073C7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1A89C179D5CBD0073C7A9 /* UIKit.framework */; };
 		2CA1A89F179D5CBD0073C7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1A89E179D5CBD0073C7A9 /* Foundation.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		2C8360C4179D84CC00AE1178 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		2C8360C5179D84CC00AE1178 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		2CA1A899179D5CBD0073C7A9 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */,
 				2CA1A8B7179D5CBE0073C7A9 /* SearchViewController.xib */,
 				2CA1A8A3179D5CBD0073C7A9 /* Supporting Files */,
+				2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				2CDCC705179D74E000200B48 /* StoreButton@2x.png in Resources */,
 				2CDCC706179D74E000200B48 /* TableCellGradient.png in Resources */,
 				2CDCC708179D750F00200B48 /* SearchResultCell.xib in Resources */,
+				2C72523D17A0186700C2EE32 /* NothingFoundCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
