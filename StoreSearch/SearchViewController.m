@@ -85,26 +85,59 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     } else {
         return indexPath;
     }
-}   
+}
 
 #pragma mark - UISearchBarDelegate
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (NSDictionary *)parseJSON:(NSString *)jsonString
 {
-    [searchBar resignFirstResponder];
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
-    searchResults = [NSMutableArray arrayWithCapacity:10];
-    
-    if (![searchBar.text isEqualToString:@"justin bieber"]) {
-        for (int i = 0; i < 3; i++) {
-            SearchResult *searchResult = [[SearchResult alloc] init];
-            searchResult.name = [NSString stringWithFormat:@"Fake Result %d for", i];
-            searchResult.artistName = searchBar.text;
-            [searchResults addObject:searchResult];
-        }
+    NSError *error;
+    id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (resultObject == nil) {
+        NSLog(@"JSON Error: %@", error);
+        return nil;
     }
     
-    [self.tableView reloadData];
+    return resultObject;
+}
+
+- (NSURL *)urlWithSearchText:(NSString *)searchText
+{
+    NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@", escapedSearchText];
+    NSURL *url = [NSURL URLWithString:urlString];
+    return url;
+}
+
+- (NSString *)performStoreRequestWithURL:(NSURL *)url
+{
+    NSError *error;
+    NSString *resultString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (resultString == nil) {
+        NSLog(@"Download Error: %@", error);
+        return nil;
+    }
+    return resultString;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    if ([searchBar.text length] > 0) {
+        [searchBar resignFirstResponder];
+        
+        searchResults = [NSMutableArray arrayWithCapacity:10];
+        
+        NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSLog(@"URL '%@'", url);
+        NSString *jsonString = [self performStoreRequestWithURL:url];
+        NSLog(@"Received JSON string '%@'", jsonString);
+        NSDictionary *dictionary = [self parseJSON:jsonString];
+        NSLog(@"Dictionary '%@'", dictionary);
+        
+        [self.tableView reloadData];
+    }
 }
 
 @end
