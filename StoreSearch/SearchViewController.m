@@ -89,6 +89,18 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
 
 #pragma mark - UISearchBarDelegate
 
+- (void)showNetworkError
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"Whoops..."
+                              message:@"There was an error reading from the iTunes Store. Please try again."
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 - (NSDictionary *)parseJSON:(NSString *)jsonString
 {
     NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -97,6 +109,10 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
     id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if (resultObject == nil) {
         NSLog(@"JSON Error: %@", error);
+        return nil;
+    }
+    if (![resultObject isKindOfClass:[NSDictionary class]]) {
+        NSLog(@"JSON Error: Expected dictionary");
         return nil;
     }
     
@@ -130,10 +146,18 @@ static NSString *const NothingFoundCellIdentifier = @"NothingFoundCell";
         searchResults = [NSMutableArray arrayWithCapacity:10];
         
         NSURL *url = [self urlWithSearchText:searchBar.text];
-        NSLog(@"URL '%@'", url);
         NSString *jsonString = [self performStoreRequestWithURL:url];
-        NSLog(@"Received JSON string '%@'", jsonString);
+        if (jsonString == nil) {
+            [self showNetworkError];
+            return;
+        }
+        
         NSDictionary *dictionary = [self parseJSON:jsonString];
+        if (dictionary == nil) {
+            [self showNetworkError];
+            return;
+        }
+        
         NSLog(@"Dictionary '%@'", dictionary);
         
         [self.tableView reloadData];
