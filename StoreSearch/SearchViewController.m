@@ -255,6 +255,8 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     if ([searchBar.text length] > 0) {
         [searchBar resignFirstResponder];
         
+        [queue cancelAllOperations];
+        
         isLoading = YES;
         [self.tableView reloadData];
         
