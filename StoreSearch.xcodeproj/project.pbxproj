@@ -20,14 +20,14 @@
 		2C91C06117A4B2280082BD22 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C05517A4B2280082BD22 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C91C06217A4B2280082BD22 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C05717A4B2280082BD22 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-unused"; }; };
 		2C91C06317A4B2280082BD22 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C05917A4B2280082BD22 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C91C06617A4D0FA0082BD22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C91C06417A4D0FA0082BD22 /* Default.png */; };
+		2C91C06717A4D0FA0082BD22 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C91C06517A4D0FA0082BD22 /* Default@2x.png */; };
 		2CA1A89D179D5CBD0073C7A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1A89C179D5CBD0073C7A9 /* UIKit.framework */; };
 		2CA1A89F179D5CBD0073C7A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1A89E179D5CBD0073C7A9 /* Foundation.framework */; };
 		2CA1A8A1179D5CBD0073C7A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA1A8A0179D5CBD0073C7A9 /* CoreGraphics.framework */; };
 		2CA1A8A7179D5CBD0073C7A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8A5179D5CBD0073C7A9 /* InfoPlist.strings */; };
 		2CA1A8A9179D5CBD0073C7A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A8A8179D5CBD0073C7A9 /* main.m */; };
 		2CA1A8AD179D5CBD0073C7A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A8AC179D5CBD0073C7A9 /* AppDelegate.m */; };
-		2CA1A8AF179D5CBD0073C7A9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8AE179D5CBD0073C7A9 /* Default.png */; };
-		2CA1A8B1179D5CBD0073C7A9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B0179D5CBD0073C7A9 /* Default@2x.png */; };
 		2CA1A8B3179D5CBD0073C7A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B2179D5CBD0073C7A9 /* Default-568h@2x.png */; };
 		2CA1A8B6179D5CBD0073C7A9 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */; };
 		2CA1A8B9179D5CBE0073C7A9 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA1A8B7179D5CBE0073C7A9 /* SearchViewController.xib */; };
@@ -86,6 +86,8 @@
 		2C91C05717A4B2280082BD22 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		2C91C05817A4B2280082BD22 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		2C91C05917A4B2280082BD22 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		2C91C06417A4D0FA0082BD22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2C91C06517A4D0FA0082BD22 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CA1A899179D5CBD0073C7A9 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA1A89C179D5CBD0073C7A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2CA1A89E179D5CBD0073C7A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,8 +98,6 @@
 		2CA1A8AA179D5CBD0073C7A9 /* StoreSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreSearch-Prefix.pch"; sourceTree = "<group>"; };
 		2CA1A8AB179D5CBD0073C7A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CA1A8AC179D5CBD0073C7A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2CA1A8AE179D5CBD0073C7A9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		2CA1A8B0179D5CBD0073C7A9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CA1A8B2179D5CBD0073C7A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2CA1A8B4179D5CBD0073C7A9 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -224,6 +224,8 @@
 		2CA1A8A3179D5CBD0073C7A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2C91C06417A4D0FA0082BD22 /* Default.png */,
+				2C91C06517A4D0FA0082BD22 /* Default@2x.png */,
 				2C91C04317A4B2280082BD22 /* AFNetworking */,
 				2CA7436E17A3661300342EC1 /* Icon */,
 				2CDCC6E8179D74E000200B48 /* Images */,
@@ -231,8 +233,6 @@
 				2CA1A8A5179D5CBD0073C7A9 /* InfoPlist.strings */,
 				2CA1A8A8179D5CBD0073C7A9 /* main.m */,
 				2CA1A8AA179D5CBD0073C7A9 /* StoreSearch-Prefix.pch */,
-				2CA1A8AE179D5CBD0073C7A9 /* Default.png */,
-				2CA1A8B0179D5CBD0073C7A9 /* Default@2x.png */,
 				2CA1A8B2179D5CBD0073C7A9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
@@ -328,8 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA1A8A7179D5CBD0073C7A9 /* InfoPlist.strings in Resources */,
-				2CA1A8AF179D5CBD0073C7A9 /* Default.png in Resources */,
-				2CA1A8B1179D5CBD0073C7A9 /* Default@2x.png in Resources */,
 				2CA1A8B3179D5CBD0073C7A9 /* Default-568h@2x.png in Resources */,
 				2CA1A8B9179D5CBE0073C7A9 /* SearchViewController.xib in Resources */,
 				2CDCC6F8179D74E000200B48 /* BarTexture.png in Resources */,
@@ -359,6 +357,8 @@
 				2CA7437F17A3661300342EC1 /* Icon@2x.png in Resources */,
 				2CA7438017A3661300342EC1 /* iTunesArtwork in Resources */,
 				2C0BF9EF17A4029A00C655CE /* LoadingCell.xib in Resources */,
+				2C91C06617A4D0FA0082BD22 /* Default.png in Resources */,
+				2C91C06717A4D0FA0082BD22 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

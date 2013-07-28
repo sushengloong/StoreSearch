@@ -18,6 +18,9 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 @interface SearchViewController ()
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *segmentedControl;
+
+- (IBAction)segmentChanged:(UISegmentedControl *)sender;
 @end
 
 @implementation SearchViewController {
@@ -152,10 +155,18 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     [alertView show];
 }
 
-- (NSURL *)urlWithSearchText:(NSString *)searchText
+- (NSURL *)urlWithSearchText:(NSString *)searchText category:(NSInteger)category
 {
+    NSString *categoryName;
+    switch (category) {
+        case 0: categoryName = @""; break;
+        case 1: categoryName = @"musicTrack"; break;
+        case 2: categoryName = @"software"; break;
+        case 3: categoryName = @"ebook"; break;
+    }
+    
     NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@&limit=200", escapedSearchText];
+    NSString *urlString = [NSString stringWithFormat:@"http://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText, categoryName];
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
 }
@@ -250,10 +261,10 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     }
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (void)performSearch
 {
-    if ([searchBar.text length] > 0) {
-        [searchBar resignFirstResponder];
+    if ([self.searchBar.text length] > 0) {
+        [self.searchBar resignFirstResponder];
         
         [queue cancelAllOperations];
         
@@ -262,7 +273,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         
         searchResults = [NSMutableArray arrayWithCapacity:10];
         
-        NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSURL *url = [self urlWithSearchText:self.searchBar.text category:self.segmentedControl.selectedSegmentIndex];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
         AFJSONRequestOperation *operation = [AFJSONRequestOperation
@@ -283,6 +294,19 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
                                              }];
         operation.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
         [queue addOperation:operation];
-    }}
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self performSearch];
+}
+
+- (IBAction)segmentChanged:(UISegmentedControl *)sender
+{
+    if (searchResults != nil) {
+        [self performSearch];
+    }
+}
 
 @end
