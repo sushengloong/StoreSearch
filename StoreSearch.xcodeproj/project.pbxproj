@@ -10,6 +10,8 @@
 		2C0BF9EF17A4029A00C655CE /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */; };
 		2C72523D17A0186700C2EE32 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */; };
 		2C8360C6179D84CC00AE1178 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8360C5179D84CC00AE1178 /* SearchResultCell.m */; };
+		2C8E652717A553650062BD09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E652517A553650062BD09 /* DetailViewController.m */; };
+		2C8E652817A553650062BD09 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8E652617A553650062BD09 /* DetailViewController.xib */; };
 		2C91C05A17A4B2280082BD22 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C04517A4B2280082BD22 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wno-unused"; }; };
 		2C91C05B17A4B2280082BD22 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C04717A4B2280082BD22 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2C91C05C17A4B2280082BD22 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C91C04917A4B2280082BD22 /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -64,6 +66,9 @@
 		2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		2C8360C4179D84CC00AE1178 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		2C8360C5179D84CC00AE1178 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		2C8E652417A553650062BD09 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2C8E652517A553650062BD09 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2C8E652617A553650062BD09 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		2C91C04417A4B2280082BD22 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		2C91C04517A4B2280082BD22 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		2C91C04617A4B2280082BD22 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -217,6 +222,9 @@
 				2CA1A8A3179D5CBD0073C7A9 /* Supporting Files */,
 				2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */,
 				2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */,
+				2C8E652417A553650062BD09 /* DetailViewController.h */,
+				2C8E652517A553650062BD09 /* DetailViewController.m */,
+				2C8E652617A553650062BD09 /* DetailViewController.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 				2C0BF9EF17A4029A00C655CE /* LoadingCell.xib in Resources */,
 				2C91C06617A4D0FA0082BD22 /* Default.png in Resources */,
 				2C91C06717A4D0FA0082BD22 /* Default@2x.png in Resources */,
+				2C8E652817A553650062BD09 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +393,7 @@
 				2C91C06117A4B2280082BD22 /* AFURLConnectionOperation.m in Sources */,
 				2C91C06217A4B2280082BD22 /* AFXMLRequestOperation.m in Sources */,
 				2C91C06317A4B2280082BD22 /* UIImageView+AFNetworking.m in Sources */,
+				2C8E652717A553650062BD09 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
