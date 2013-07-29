@@ -56,7 +56,7 @@
     }
     
     self.artistNameLabel.text = artistName;
-    self.kindLabel.text = self.searchResult.kind;
+    self.kindLabel.text = [self.searchResult kindForDisplay];
     self.genreLabel.text = self.searchResult.genre;
 }
 

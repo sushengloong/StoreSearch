@@ -20,4 +20,6 @@
 @property (nonatomic, copy) NSString *currency;
 @property (nonatomic, copy) NSDecimalNumber *price;
 @property (nonatomic, copy) NSString *genre;
+
+- (NSString *)kindForDisplay;
 @end
