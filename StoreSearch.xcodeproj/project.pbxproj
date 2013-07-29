@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0BF9EF17A4029A00C655CE /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */; };
+		2C160AA617A618AD005869E2 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C160AA517A618AD005869E2 /* GradientView.m */; };
 		2C72523D17A0186700C2EE32 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */; };
 		2C8360C6179D84CC00AE1178 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8360C5179D84CC00AE1178 /* SearchResultCell.m */; };
 		2C8E652717A553650062BD09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E652517A553650062BD09 /* DetailViewController.m */; };
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		2C160AA417A618AC005869E2 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		2C160AA517A618AD005869E2 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		2C8360C4179D84CC00AE1178 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		2C8360C5179D84CC00AE1178 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				2C8E652417A553650062BD09 /* DetailViewController.h */,
 				2C8E652517A553650062BD09 /* DetailViewController.m */,
 				2C8E652617A553650062BD09 /* DetailViewController.xib */,
+				2C160AA417A618AC005869E2 /* GradientView.h */,
+				2C160AA517A618AD005869E2 /* GradientView.m */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				2C91C06217A4B2280082BD22 /* AFXMLRequestOperation.m in Sources */,
 				2C91C06317A4B2280082BD22 /* UIImageView+AFNetworking.m in Sources */,
 				2C8E652717A553650062BD09 /* DetailViewController.m in Sources */,
+				2C160AA617A618AD005869E2 /* GradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
