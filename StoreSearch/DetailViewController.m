@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SearchResult.h"
 
 @interface DetailViewController ()
 @property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
@@ -46,6 +47,17 @@
     self.backgroundView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.backgroundView.layer.borderWidth = 3.0f;
     self.backgroundView.layer.cornerRadius = 10.0f;
+    
+    self.nameLabel.text = self.searchResult.name;
+    
+    NSString *artistName = self.searchResult.artistName;
+    if (artistName == nil) {
+        artistName = @"Unknown";
+    }
+    
+    self.artistNameLabel.text = artistName;
+    self.kindLabel.text = self.searchResult.kind;
+    self.genreLabel.text = self.searchResult.genre;
 }
 
 - (void)didReceiveMemoryWarning
