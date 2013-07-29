@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface DetailViewController ()
 @property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
@@ -16,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *genreLabel;
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 @property (nonatomic, weak) IBOutlet UIButton *storeButton;
+@property (nonatomic, weak) IBOutlet UIView *backgroundView;
 @end
 
 @implementation DetailViewController
@@ -37,7 +39,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIImage *image = [[UIImage imageNamed:@"StoreButton"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];
+    [self.storeButton setBackgroundImage:image forState:UIControlStateNormal];
+    
+    self.backgroundView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.backgroundView.layer.borderWidth = 3.0f;
+    self.backgroundView.layer.cornerRadius = 10.0f;
 }
 
 - (void)didReceiveMemoryWarning
