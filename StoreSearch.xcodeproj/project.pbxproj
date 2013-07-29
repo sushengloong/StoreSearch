@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C0BF9EF17A4029A00C655CE /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */; };
 		2C160AA617A618AD005869E2 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C160AA517A618AD005869E2 /* GradientView.m */; };
+		2C160AA817A62E91005869E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C160AA717A62E91005869E2 /* QuartzCore.framework */; };
 		2C72523D17A0186700C2EE32 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */; };
 		2C8360C6179D84CC00AE1178 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8360C5179D84CC00AE1178 /* SearchResultCell.m */; };
 		2C8E652717A553650062BD09 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E652517A553650062BD09 /* DetailViewController.m */; };
@@ -66,6 +67,7 @@
 		2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		2C160AA417A618AC005869E2 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		2C160AA517A618AD005869E2 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		2C160AA717A62E91005869E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		2C8360C4179D84CC00AE1178 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		2C8360C5179D84CC00AE1178 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C160AA817A62E91005869E2 /* QuartzCore.framework in Frameworks */,
 				2CA1A89D179D5CBD0073C7A9 /* UIKit.framework in Frameworks */,
 				2CA1A89F179D5CBD0073C7A9 /* Foundation.framework in Frameworks */,
 				2CA1A8A1179D5CBD0073C7A9 /* CoreGraphics.framework in Frameworks */,
@@ -185,8 +188,8 @@
 		2CA1A890179D5CBD0073C7A9 = {
 			isa = PBXGroup;
 			children = (
-				2CA1A8A2179D5CBD0073C7A9 /* StoreSearch */,
 				2CA1A89B179D5CBD0073C7A9 /* Frameworks */,
+				2CA1A8A2179D5CBD0073C7A9 /* StoreSearch */,
 				2CA1A89A179D5CBD0073C7A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 		2CA1A89B179D5CBD0073C7A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C160AA717A62E91005869E2 /* QuartzCore.framework */,
 				2CA1A89C179D5CBD0073C7A9 /* UIKit.framework */,
 				2CA1A89E179D5CBD0073C7A9 /* Foundation.framework */,
 				2CA1A8A0179D5CBD0073C7A9 /* CoreGraphics.framework */,
@@ -222,7 +226,6 @@
 				2CA1A8B4179D5CBD0073C7A9 /* SearchViewController.h */,
 				2CA1A8B5179D5CBD0073C7A9 /* SearchViewController.m */,
 				2CA1A8B7179D5CBE0073C7A9 /* SearchViewController.xib */,
-				2CA1A8A3179D5CBD0073C7A9 /* Supporting Files */,
 				2C72523C17A0186700C2EE32 /* NothingFoundCell.xib */,
 				2C0BF9EE17A4029A00C655CE /* LoadingCell.xib */,
 				2C8E652417A553650062BD09 /* DetailViewController.h */,
@@ -230,6 +233,7 @@
 				2C8E652617A553650062BD09 /* DetailViewController.xib */,
 				2C160AA417A618AC005869E2 /* GradientView.h */,
 				2C160AA517A618AD005869E2 /* GradientView.m */,
+				2CA1A8A3179D5CBD0073C7A9 /* Supporting Files */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
