@@ -21,6 +21,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 @property (nonatomic, weak) IBOutlet UIButton *storeButton;
 @property (nonatomic, weak) IBOutlet UIView *backgroundView;
+@property (nonatomic, weak) IBOutlet UIButton *closeButton;
 @end
 
 @implementation DetailViewController {
@@ -106,6 +107,8 @@
     gradientView = [[GradientView alloc] initWithFrame:parentViewController.view.bounds];
     [parentViewController.view addSubview:gradientView];
     
+    self.view.frame = parentViewController.view.bounds;
+    [self layoutForInterfaceOrientation:parentViewController.interfaceOrientation];
     [parentViewController.view addSubview:self.view];
     [parentViewController addChildViewController:self];
     
@@ -151,6 +154,28 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
     [self didMoveToParentViewController:self.parentViewController];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+- (void)layoutForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    CGRect rect = self.closeButton.frame;
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+        rect.origin = CGPointMake(28, 87);
+    } else {
+        rect.origin = CGPointMake(108, 7);
+    }
+    self.closeButton.frame = rect;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self layoutForInterfaceOrientation:toInterfaceOrientation];
 }
 
 @end

@@ -288,4 +288,9 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     }
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
 @end
