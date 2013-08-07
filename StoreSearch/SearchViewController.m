@@ -315,7 +315,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
         }];
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
         [self.searchBar resignFirstResponder];
-        [detailViewController dismissFromParentViewController];
+        [detailViewController dismissFromParentViewControllerWithAnimationType:DetailViewControllerAnimationTypeFade];
     }
 }
 
