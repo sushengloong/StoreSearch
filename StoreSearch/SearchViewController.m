@@ -31,6 +31,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     BOOL isLoading;
     NSOperationQueue *queue;
     LandscapeViewController *landscapeViewController;
+    __weak DetailViewController *detailViewController;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -109,6 +110,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
     controller.searchResult = searchResult;
     
     [controller presentInParentViewController:self];
+    detailViewController = controller;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -312,6 +314,8 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
             [landscapeViewController didMoveToParentViewController:self];
         }];
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+        [self.searchBar resignFirstResponder];
+        [detailViewController dismissFromParentViewController];
     }
 }
 
