@@ -12,4 +12,6 @@
 
 @interface LandscapeViewController : UIViewController <UIScrollViewDelegate>
 @property (nonatomic, strong) Search *search;
+
+- (void)searchResultsReceived;
 @end
