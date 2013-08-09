@@ -118,7 +118,7 @@ static NSString *const LoadingCellIdentifier = @"LoadingCell";
 - (void)showNetworkError
 {
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Whoops..."
+                              initWithTitle:NSLocalizedString(@"Whoops...", @"Error alert: title")
                               message:@"There was an error reading from the iTunes Store. Please try again."
                               delegate:nil
                               cancelButtonTitle:@"OK"
