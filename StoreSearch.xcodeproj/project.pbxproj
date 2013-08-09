@@ -70,6 +70,7 @@
 /* Begin PBXFileReference section */
 		2C0CA23E17B5398100CEB71F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C0CA24017B5398500CEB71F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C0CA24117B53A2E00CEB71F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C160AA417A618AC005869E2 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		2C160AA517A618AD005869E2 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		2C160AA717A62E91005869E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -492,6 +493,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CA1A8A6179D5CBD0073C7A9 /* en */,
+				2C0CA24117B53A2E00CEB71F /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
