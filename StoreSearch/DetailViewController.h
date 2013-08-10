@@ -15,8 +15,9 @@ typedef enum {
     DetailViewControllerAnimationTypeFade
 } DetailViewControllerAnimationType;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 @property (nonatomic, strong) SearchResult *searchResult;
+@property (nonatomic, strong) UIPopoverController *masterPopoverController;
 
 - (void)presentInParentViewController:(UIViewController *)parentViewController;
 - (void)dismissFromParentViewControllerWithAnimationType:(DetailViewControllerAnimationType)animationType;

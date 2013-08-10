@@ -42,22 +42,14 @@
     NSLog(@"dealloc %@", self);
     [self.artworkImageView cancelImageRequestOperation];
 }
-- (void)viewDidLoad
+
+- (void)updateUI
 {
-    [super viewDidLoad];
-    
-    UIImage *image = [[UIImage imageNamed:@"StoreButton"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];
-    [self.storeButton setBackgroundImage:image forState:UIControlStateNormal];
-    
-    self.backgroundView.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.backgroundView.layer.borderWidth = 3.0f;
-    self.backgroundView.layer.cornerRadius = 10.0f;
-    
     self.nameLabel.text = self.searchResult.name;
     
     NSString *artistName = self.searchResult.artistName;
     if (artistName == nil) {
-        artistName = @"Unknown";
+        artistName = NSLocalizedString(@"Unknown", @"Unknown artist name");
     }
     
     self.artistNameLabel.text = artistName;
@@ -70,8 +62,33 @@
     self.priceLabel.text = [formatter stringFromNumber:self.searchResult.price];
     
     [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"DetailPlaceholder"]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.backgroundView.hidden = NO;
+    }
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIImage *image = [[UIImage imageNamed:@"StoreButton"] stretchableImageWithLeftCapWidth:6 topCapHeight:0];
+    [self.storeButton setBackgroundImage:image forState:UIControlStateNormal];
+    
+    self.backgroundView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.backgroundView.layer.borderWidth = 3.0f;
+    self.backgroundView.layer.cornerRadius = 10.0f;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
+        self.closeButton.hidden = YES;
+        self.backgroundView.hidden = (self.searchResult == nil);
+    }
+    
+    if (self.searchResult != nil) {
+        [self updateUI];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -178,6 +195,37 @@
 {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self layoutForInterfaceOrientation:toInterfaceOrientation];
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (void)splitViewController:(UISplitViewController *)splitController
+     willHideViewController:(UIViewController *)viewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)popoverController
+{
+    barButtonItem.title = NSLocalizedString(@"Search", @"Split-view master button");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController
+     willShowViewController:(UIViewController *)viewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
+- (void)setSearchResult:(SearchResult *)newSearchResult
+{
+    if (_searchResult != newSearchResult) {
+        _searchResult = newSearchResult;
+        
+        if ([self isViewLoaded]) {
+            [self updateUI];
+        }
+    }
 }
 
 @end

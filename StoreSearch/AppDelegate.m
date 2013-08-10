@@ -9,16 +9,32 @@
 #import "AppDelegate.h"
 
 #import "SearchViewController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self customizeAppearance];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.viewController = [[SearchViewController alloc] initWithNibName:@"SearchViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.splitViewController = [[UISplitViewController alloc] init];
+        
+        DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+        
+        self.splitViewController.delegate = detailViewController;
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.viewController, detailNavigationController, nil];
+        
+        self.window.rootViewController = self.splitViewController;
+        self.viewController.detailViewController = detailViewController;
+    } else {
+        self.window.rootViewController = self.viewController;
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
