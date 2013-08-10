@@ -74,6 +74,12 @@
     
     UIColor *tintColor = [UIColor colorWithRed:40/255.0f green:50/255.0f blue:50/255.0f alpha:1.0f];
     [[UISegmentedControl appearance] setTintColor:tintColor];
+    [[UIBarButtonItem appearance] setTintColor:tintColor];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIColor whiteColor], UITextAttributeTextColor,
+                                                          [UIColor colorWithWhite:0.0f alpha:0.5f], UITextAttributeTextShadowColor,
+                                                          nil]];
 }
 
 @end

@@ -65,6 +65,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.backgroundView.hidden = NO;
+        [self.masterPopoverController dismissPopoverAnimated:YES];
     }
 }
 
@@ -83,6 +84,7 @@
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
         self.closeButton.hidden = YES;
         self.backgroundView.hidden = (self.searchResult == nil);
+        self.title = [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:@"CFBundleDisplayName"];
     }
     
     if (self.searchResult != nil) {
